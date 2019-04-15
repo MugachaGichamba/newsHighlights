@@ -5,16 +5,19 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Welcome to Wall street</h1>
+<h1>Welcome to News</h1>
 
 
 {% for article in news %}
     <ul>
 {#        <a href="/article/{{ article.source.get("name")}}"><li>{{ article.source.get("name")}}</li></a>#}
-        <li>{{ article.get("id") }}</li>
-    <li>{{ article.get("name") }}</li>
-    <li>{{ article.get("description") }}</li>
-    <li>{{ article.get("category") }}</li>
+        <li>Article Id: {{ article.get("id") }}</li>
+    <li>Article name: {{ article.get("name") }}</li>
+    <li>Description: {{ article.get("description") }}</li>
+    <li>Category: {{ article.get("category") }}</li>
+    <li>Language: {{ article.get("language") }}</li>
+    <li>Country: {{ article.get("country") }}</li>
+        <a href=""><li>See full article from {{ article.get("name") }}</li></a>
 
 
     </ul>
