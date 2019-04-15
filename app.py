@@ -13,8 +13,9 @@ def index():
     return render_template('index.html', news=news)
 
 
-@app.route('/article/<string:id>')  # example.com/hello/Anthony
+@app.route('/article/<string:id>')
 def article(id):
-    url = 'https://newsapi.org/v2/sources?id="abc-news"&apiKey=57aa9f751dd44bb096ccd3b24857c51b'
-    print(requests.get(url).json())
-    return 'Hello ' + id + '!'  # returns hello Anthony!
+    print(id)
+    # url = f'https://newsapi.org/v2/sources?id={id}&apiKey=57aa9f751dd44bb096ccd3b24857c51b'
+    print(requests.get('https://newsapi.org/v2/sources?id=mirror&apiKey=57aa9f751dd44bb096ccd3b24857c51b').json())
+    return 'Hello ' + id + '!'
