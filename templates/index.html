@@ -5,6 +5,20 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Iam at home</h1>
+<h1>Welcome to Wall street</h1>
+
+
+{% for article in news %}
+    <ul>
+        <li>{{ article.title }}</li>
+        <li>by: {{ article.author }}</li>
+        <li>{{ article.description }}</li>
+        <li>Go to Article ...>{{ article.url }}</li>
+        <li><img src="{{ article.urlToImage }}" alt=""></li>
+        <li>Published At{{ article.publishedAt }}</li>
+        <li>{{ article.content }}</li>
+    </ul>
+{% endfor %}
+
 </body>
 </html>
