@@ -10,7 +10,8 @@
 
 {% for article in news %}
     <ul>
-        <a href=""><li>{{ article.source.get("name")}}</li></a>
+{#        <a href="/article/{{ article.source.get("name")}}"><li>{{ article.source.get("name")}}</li></a>#}
+        <a href="/article/{{ article.get("id") }}"><li>{{ article.get("id") }}</li></a>
 
 
     </ul>
