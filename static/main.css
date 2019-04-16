@@ -1,3 +1,9 @@
 li {
     list-style-type: none;
 }
+
+ul{
+   border:  2px solid aqua;
+    padding: 3px;
+    text-align: center;
+}

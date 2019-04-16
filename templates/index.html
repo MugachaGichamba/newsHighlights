@@ -7,22 +7,27 @@
 </head>
 <body>
 <h1>Welcome to News</h1>
+<div class="source">
+
+    {% for article in news %}
+
+        <ul>
+            <li>Article Id: {{ article.get("id") }}</li>
+            <li>Article name: {{ article.get("name") }}</li>
+            <li>Description: {{ article.get("description") }}</li>
+            street
+            <li>Category: {{ article.get("category") }}</li>
+            <li>Language: {{ article.get("language") }}</li>
+            <li>Country: {{ article.get("country") }}</li>
+            <a href="">
+                <li>See full article from {{ article.get("name") }}</li>
+            </a>
 
 
-{% for article in news %}
-    <ul>
-{#        <a href="/article/{{ article.source.get("name")}}"><li>{{ article.source.get("name")}}</li></a>#}
-        <li>Article Id: {{ article.get("id") }}</li>
-    <li>Article name: {{ article.get("name") }}</li>
-    <li>Description: {{ article.get("description") }}</li>street
-    <li>Category: {{ article.get("category") }}</li>
-    <li>Language: {{ article.get("language") }}</li>
-    <li>Country: {{ article.get("country") }}</li>
-        <a href=""><li>See full article from {{ article.get("name") }}</li></a>
+        </ul>
 
 
-    </ul>
-{% endfor %}
-
+    {% endfor %}
+</div>
 </body>
 </html>
