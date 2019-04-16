@@ -3,35 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/main.css">
 </head>
-<body>
-<h1>Welcome to News</h1>
-<div class="source">
 
-    {% for article in news %}
-        <ul>
-            <div class="row">
-                <div class="col-md-4">
-                    <li><img src="{{ article.get("urlToImage") }}" alt="Article image"></li>
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="/">Flask Blog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{{ url_for("index") }}">Home</a>
+                    <a class="nav-item nav-link" href="{{ url_for("sources") }}">Sources</a>
                 </div>
-                <div class="col-md-8">
-                    <li>Published on: {{ article.get("publishedAt") }}</li>
-                    <li>Article Author: {{ article.get("author") }}</li>
-                    <li>Article title: {{ article.get("title") }}</li>
-                    <li>Description: {{ article.get("description") }}</li>
 
-                    <a href="{{ article.get("url") }}">
-                        <li>See full article</li>
-                    </a>
-                </div>
             </div>
+        </div>
+    </nav>
+</header>
+<body>
+<div class="container">
+    <h1>Welcome to News</h1>
+<h2>Top Headlines</h2>
+    <div class="source">
+
+        {% for article in news %}
+            <ul>
 
 
-        </ul>
+                <li><img src="{{ article.get("urlToImage") }}" alt="Article image"></li>
 
 
-    {% endfor %}
+                <li>Published on: {{ article.get("publishedAt") }}</li>
+                <li>Article Author: {{ article.get("author") }}</li>
+                <li>Article title: {{ article.get("title") }}</li>
+                <li>Description: {{ article.get("description") }}</li>
+
+                <a href="{{ article.get("url") }}">
+                    <li>See full article</li>
+                </a>
+
+
+            </ul>
+
+
+        {% endfor %}
+    </div>
 </div>
+
 </body>
 </html>
