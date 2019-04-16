@@ -3,13 +3,14 @@ li {
 }
 
 ul{
-   border:  2px solid aqua;
+   border:  2px solid #cbd5db;
     padding: 3px;
     text-align: center;
 }
 img {
     width: 80px;
     height: 80px;
+    border-radius: 50%;
 }
 body {
   background: #fafafa;
@@ -17,8 +18,9 @@ body {
   margin-top: 5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   color: #444444;
+    text-align: center;
 }
 
 .bg-steel {
