@@ -26,5 +26,5 @@ def sources():
     url = 'https://newsapi.org/v2/sources?apiKey=57aa9f751dd44bb096ccd3b24857c51b'
     news = requests.get(url).json().get("sources")
     print(news)
-    return render_template('index.html', news=news)
+    return render_template('sources.html', news=news)
 
