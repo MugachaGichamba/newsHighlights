@@ -6,7 +6,9 @@
               {% for article in articles %}
 
             <ul>
-
+                {% if  article.get("urlToImage")  %}
+                    <li><img src="{{ article.get("urlToImage") }}" alt=""></li>
+                {% endif %}
                 <li>Written By: {{ article.get("author") }}</li>
                 <li>Title: {{ article.get("title") }}</li>
                 <li>Description: {{ article.get("description") }}</li>
