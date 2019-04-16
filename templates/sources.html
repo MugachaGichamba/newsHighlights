@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sources</title>
-    <link rel="stylesheet" href="../static/main.css">
-</head>
-<body>
-<h1>Welcome to News Sources</h1>
-<div class="source">
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome to News Sources</h1>
+    <div class="source">
 
-    {% for article in news %}
-
-        <ul>
-            <li>Article Id: {{ article.get("id") }}</li>
-            <li>Article name: {{ article.get("name") }}</li>
-            <li>Description: {{ article.get("description") }}</li>
-            street
-            <li>Category: {{ article.get("category") }}</li>
-            <li>Language: {{ article.get("language") }}</li>
-            <li>Country: {{ article.get("country") }}</li>
-            <a href="{{ article.get("url") }}">
-                <li>See full article from {{ article.get("name") }}</li>
-            </a>
-
-
-        </ul>
-
-
-    {% endfor %}
-</div>
-</body>
-</html>
+              {% for article in news %}
+                  <a href="/sources/{{ article.get("id") }}">
+            <ul>
+                <li>Article Id: {{ article.get("id") }}</li>
+                <li>Article name: {{ article.get("name") }}</li>
+                <li>Description: {{ article.get("description") }}</li>
+                street
+                <li>Category: {{ article.get("category") }}</li>
+                <li>Language: {{ article.get("language") }}</li>
+                <li>Country: {{ article.get("country") }}</li>
+            </ul>
+        {% endfor %}
+        </a>
+    </div>
+{% endblock content %}

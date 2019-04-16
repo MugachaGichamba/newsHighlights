@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome to Articles by {{ articles[0].get("source").get("id") }}</h1>
+    <div class="source">
 
-</body>
-</html>
+              {% for article in articles %}
+
+            <ul>
+
+                <li>Written By: {{ article.get("author") }}</li>
+                <li>Title: {{ article.get("title") }}</li>
+                <li>Description: {{ article.get("description") }}</li>
+                <li>Content: {{ article.get("content") }}</li>
+                <a href="{{ article.get("url") }}">
+                    <li>See full article from website</li>
+                </a>
+            </ul>
+        {% endfor %}
+
+    </div>
+{% endblock content %}>
