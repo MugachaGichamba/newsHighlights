@@ -15,5 +15,9 @@ As a user I will be able to:
 ## Dependencies
 1. gunicorn 19.9.0
 2. requests 2.21.0
-
+## Contact
+#### Phone: 0705684752
+#### Email: mugachadjango@gmail.com
+## License
+#### This project is licensed under the MIT License - see the LICENSE.md file for details
 
