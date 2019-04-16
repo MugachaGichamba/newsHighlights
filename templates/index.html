@@ -10,18 +10,22 @@
 <div class="source">
 
     {% for article in news %}
-
         <ul>
-            <li>Article Id: {{ article.get("id") }}</li>
-            <li>Article name: {{ article.get("name") }}</li>
-            <li>Description: {{ article.get("description") }}</li>
-            street
-            <li>Category: {{ article.get("category") }}</li>
-            <li>Language: {{ article.get("language") }}</li>
-            <li>Country: {{ article.get("country") }}</li>
-            <a href="{{ article.get("url") }}">
-                <li>See full article from {{ article.get("name") }}</li>
-            </a>
+            <div class="row">
+                <div class="col-md-4">
+                    <li><img src="{{ article.get("urlToImage") }}" alt="Article image"></li>
+                </div>
+                <div class="col-md-8">
+                    <li>Published on: {{ article.get("publishedAt") }}</li>
+                    <li>Article Author: {{ article.get("author") }}</li>
+                    <li>Article title: {{ article.get("title") }}</li>
+                    <li>Description: {{ article.get("description") }}</li>
+
+                    <a href="{{ article.get("url") }}">
+                        <li>See full article</li>
+                    </a>
+                </div>
+            </div>
 
 
         </ul>
